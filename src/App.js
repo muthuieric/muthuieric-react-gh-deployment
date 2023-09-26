@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
 function App() {
+  // Initialize the state for the counter
+  const [count, setCount] = useState(0);
+
+  // Function to increment the counter
+  const increment = () => {
+    setCount(count + 1);
+  };
+
+  // Function to decrement the counter
+  const decrement = () => {
+    setCount(count - 1);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-        <h1>TESTING GITHUB PAGES WITH REACT AND GITHUB ACTIONS</h1>
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Simple React Counter</h1>
+      <p>Count: {count}</p>
+      <button onClick={increment}>Increment</button>
+      <button onClick={decrement}>Decrement</button>
     </div>
   );
 }
